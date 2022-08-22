@@ -5,8 +5,19 @@ namespace Exercises
     {
         public bool IsPangram(string input)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            if (input ==null) return false;
+            else
+            {
+                string alphabet = "abcdefghijklmnopqrstuvwxyz";
+                input = input.ToLower();
+                foreach (char letter in alphabet) 
+                {
+                    if (input.IndexOf(letter)==-1) return false;
+
+                }
+
+                return true;
+            }
         }
     }
 }

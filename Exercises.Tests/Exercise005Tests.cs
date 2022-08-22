@@ -65,5 +65,23 @@ namespace Exercises.Tests
         {
             Exercise005.IsPangram("the 1 quick brown fox jumps over the 2 lazy dogs").Should().Be(true);
         }
+
+        [Test]
+        public void IsPangram_Should_Return_True_For_Pangram_With_Mixed_Lower_Upper_Case()
+        {
+            Exercise005.IsPangram("ThE 1 QuIcK BrOwN FoX JuMpS OvEr ThE 2 LaZy DoGs").Should().Be(true);
+        }
+
+        [Test]
+        public void IsPangram_Should_Return_False_For_Only_Numbers()
+        {
+            Exercise005.IsPangram("2022").Should().Be(false);
+        }
+
+        [Test]
+        public void IsPangram_Should_Return_False_For_Null()
+        {
+            Exercise005.IsPangram(null).Should().Be(false);
+        }
     }
 }
