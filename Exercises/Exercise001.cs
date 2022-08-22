@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Exercises.Models;
+using System.Linq;
 
 namespace Exercises
 {
@@ -8,36 +9,52 @@ namespace Exercises
     {
         public string CapitalizeWord(string word)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            if (word == null)
+                return null;
+            else if (word == string.Empty)
+                return string.Empty;
+            else if (word.Length==1)
+                return word.ToUpper();
+            else
+                return char.ToUpper(word[0])+word.Substring(1);
         }
 
         public string GenerateInitials(string firstName, string lastName)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            return firstName[0]+"."+lastName[0];
         }
 
         public double AddVat(double originalPrice, double vatRate)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
-
-            // NB: Look in Exercise001Tests.cs
-            //     There is a test with commented out assertions.
-            //     For an extra challenge, uncomment those assertions and make that test pass too.
+            if (originalPrice<0) throw new ArgumentException("Price cannot be negative. Please enter a valid price.");
+            if (vatRate<0) throw new ArgumentException("VAT cannot be negative. Please enter a valid VAT.");
+            return Math.Round(originalPrice*(100+vatRate)/100,2);
         }
 
         public string Reverse(string sentence)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            if (sentence==null)
+                return null;
+            else 
+            {
+                string result="";
+                for(int i = sentence.Length-1; i >=0 ; i--)
+                {
+                    result+=sentence[i];
+                }
+                return result;
+            }
         }
 
         public int CountLinuxUsers(List<User> users)
         {
-            // Replace the exception statement below with your code!
-            throw new NotImplementedException();
+            if (users==null)
+                return 0;
+			else
+            {
+                return users.Where(u=>u.Type=="Linux").ToList().Count;
+            }				
         }
     }
+
 }
