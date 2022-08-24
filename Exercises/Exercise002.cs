@@ -14,8 +14,7 @@ namespace Exercises
 
         public bool CanWatchFilm(Person person, int ageLimit)
         {
-            if (person.Age<ageLimit) return false;
-            else return true;
+            return person.Age>=ageLimit;
         }
     }
 }

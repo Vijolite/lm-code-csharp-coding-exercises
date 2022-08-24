@@ -48,12 +48,7 @@ namespace Exercises
 
         public int CountLinuxUsers(List<User> users)
         {
-            if (users==null)
-                return 0;
-			else
-            {
-                return users.Where(u=>u.Type=="Linux").ToList().Count;
-            }				
+            return (users==null)?0:users.Where(u=>u.Type=="Linux").ToList().Count;			
         }
     }
 
