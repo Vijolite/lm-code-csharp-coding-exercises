@@ -7,9 +7,7 @@ namespace Exercises
     {
         public bool IsFromManchester( Person person )
         {
-            if (person==null) return false;
-            else if (person.City == "Manchester") return true;
-            else return false;
+            return person != null && person.City == "Manchester";
         }
 
         public bool CanWatchFilm(Person person, int ageLimit)
