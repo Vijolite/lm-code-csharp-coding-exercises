@@ -8,8 +8,8 @@ namespace Exercises
             if (input ==null) return false;
             else
             {
-                  string alphabet = "abcdefghijklmnopqrstuvwxyz";
-                 input = input.ToLower();
+                string alphabet = "abcdefghijklmnopqrstuvwxyz";
+                input = input.ToLower();
                 foreach (char letter in alphabet) 
                 {
                     if (input.IndexOf(letter)==-1) return false;
